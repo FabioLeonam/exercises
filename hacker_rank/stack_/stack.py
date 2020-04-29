@@ -27,10 +27,13 @@ class Stack:
         self._size += 1
     
     def pop(self):
-        data = self._top.data
-        self._top = self._top.next
-        self._size -= 1
-        return data
+        if self._top is None:
+            return None
+        else:
+            data = self._top.data
+            self._top = self._top.next
+            self._size -= 1
+            return data
 
     def print_stack(self):
         pointer = self._top
@@ -41,7 +44,8 @@ class Stack:
 
 if __name__ == '__main__':
     stack = Stack()
-    stack.push(1)
+    print(stack.pop())
+    """ stack.push(1)
     stack.push(2)
     stack.push(3)
     print("Before pop:")
@@ -52,6 +56,6 @@ if __name__ == '__main__':
     print("After pop")
     stack.print_stack()
     print("Top ->", stack.peek())
-    print("Length -> ", len(stack))
+    print("Length -> ", len(stack)) """
 
     
